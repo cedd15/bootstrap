@@ -9,6 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
+    <!-- Map Quest -->
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
 </head>
 <body>
     <!-- NavBar -->
@@ -308,6 +311,50 @@
             </div>
         </div>
     </section>
+
+    <!-- Contact & Map -->
+    <section class="p-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md">
+                    <h2 class="text-center mb-4">Contact Info</h2>
+                    <ul class="list-group list-group-flush lead">
+                        <li class="list-group-item">
+                            <span class="fw-bold">Main Location:</span> 50 Main Street, Boston, MA
+                        </li>
+                        <li class="list-group-item">
+                            <span class="fw-bold">Enrollment Phone:</span> (555) 555-5555
+                        </li>
+                        <li class="list-group-item">
+                            <span class="fw-bold">Student Phone:</span> (333) 333-3333
+                        </li>
+                        <li class="list-group-item">
+                            <span class="fw-bold">Enrollment Email:</span> enroll@frontendbc.test
+                        </li>
+                        <li class="list-group-item">
+                            <span class="fw-bold">Student Email:</span> student@frontendbc.test
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Quest -->
+    <script>
+        L.mapquest.key = 'ehE1AIMPVuAC7Z1e9pNrBuU3eVJEWjBO';
+
+        // 'map' refers to a <div> element with the ID map
+        L.mapquest.map('map', {
+        center: [37.7749, -122.4194],
+        // center: [-71.060982, 42.35725],
+        layers: L.mapquest.tileLayer('map'),
+        zoom: 12
+        });
+      </script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
